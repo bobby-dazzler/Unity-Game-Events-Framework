@@ -1,0 +1,10 @@
+{
+    "name": "ExamplesDefinition",
+    "references": [
+        "EventsFrameworkAssembly"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
