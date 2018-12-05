@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EventsFramework;
+using UnityEventsFramework;
 
 [CreateAssetMenu (menuName = "Decisions/Examples/Foo Decision")]
 public class FooDecision : StateDecision {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	[CreateAssetMenu(menuName = "Custom Classes/Log File")]
 	public class LogFile : ScriptableObject {
 

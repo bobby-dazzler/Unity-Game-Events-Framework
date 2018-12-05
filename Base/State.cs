@@ -1,13 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
+	[Serializable]
 	public class State : ScriptableObject {
 
-		public States stateType;
+		[Tooltip("The state type which will be displayed in a history object when the State transitions to another")]
+		[SerializeField]public States stateType; // Used by CreateHistory() to record the fromState and toState types when transitioning between States.
 
-		public JobComponentSystem[] systems;
+		//public JobComponentSystem[] systems;
+
+/* 		[SerializeField]
+		public int NumberOfActions {
+			get {
+				return numberOfActions;
+			}
+			set {
+				actions = new Action[value];
+				archiveActions = new bool[value];
+				logActions = new bool[value];
+			}
+		}		
+		[SerializeField]public int numberOfActions; */
 
 		public Action[] actions;
 		public Transition[] transitions;
@@ -36,6 +52,10 @@ namespace EventsFramework {
 		}
 
 		public virtual void SetObservations(StateController controller) {
+			
+		}
+
+		public virtual void ConfigureState(StateController controller) {
 			
 		}
 

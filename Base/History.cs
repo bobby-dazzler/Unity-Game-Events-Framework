@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
     [System.Serializable]
     public abstract class History {
 

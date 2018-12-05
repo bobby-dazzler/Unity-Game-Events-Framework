@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	public class Database : MonoBehaviour {
 
 		public GameEventHistorySet gameEventHistorySet;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	[System.Serializable]
 	public abstract class RuntimeSet<T> : ScriptableObject {
 

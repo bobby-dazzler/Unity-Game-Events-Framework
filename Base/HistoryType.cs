@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
     [System.Serializable]
     [CreateAssetMenu (menuName = "Enums/History Type")]
     public class HistoryType : ScriptableObject {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	public class GameEventListener : MonoBehaviour {
 
 		public GameEvent Event;

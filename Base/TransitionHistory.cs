@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	public class TransitionHistory : History {
 
 		public States toState;

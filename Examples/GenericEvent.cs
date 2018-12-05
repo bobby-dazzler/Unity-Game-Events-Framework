@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EventsFramework;
+using UnityEventsFramework;
 
 [CreateAssetMenu (menuName = "Events/Misc/Generic Event")]
 public class GenericEvent : GameEvent {

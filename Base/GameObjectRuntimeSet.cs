@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EventsFramework;
+using UnityEventsFramework;
 
 [CreateAssetMenu (menuName = "Runtime Sets/Game Object Set")]
-public class GOSet : RuntimeSet<GameObject> {
+public class GameObjectRuntimeSet : RuntimeSet<GameObject> {
 
 
 }

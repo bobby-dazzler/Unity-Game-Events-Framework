@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	public class StateController : MonoBehaviour {
 
 		public Database database;
@@ -13,6 +13,7 @@ namespace EventsFramework {
 
 		void Awake () {
 			database = GetComponent<Database>();
+			currentState.ConfigureState(this);
 		}
 
 		public void UpdateState() {
@@ -26,6 +27,7 @@ namespace EventsFramework {
 					nextState.LogTransition(this);				
 				}
 				currentState = nextState;
+				currentState.ConfigureState(this);
 				
 				if (archiveTransition == true) {
 					Database database = this.GetComponent<Database>();
@@ -40,6 +42,10 @@ namespace EventsFramework {
 					currentState.CreateHistory(this);
 				}
 			} 
+		}
+
+		public void CallCurrentStateActionAtIndex(int index) {
+			currentState.CallActionAtIndex(index, this);
 		}
 	}
 }

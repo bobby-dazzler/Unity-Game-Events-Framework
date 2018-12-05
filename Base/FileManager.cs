@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	public class FileManager : MonoBehaviour {
 
 		public LogFileSet allLogFiles;
@@ -27,6 +27,17 @@ namespace EventsFramework {
 				if (!File.Exists(logFilePath)) {
 					Debug.Log("Unable to create log file at: " + logFilePath);
 				}
+			}
+		}
+
+		void OnStartManageSettingsFile() {
+			string fileName = "settings.json";
+			string folderName = "Config";
+			string configFolder = Path.Combine(Application.streamingAssetsPath, folderName);
+			string filePath = Path.Combine(folderName, fileName);
+
+			if (!File.Exists(filePath)) {
+				File.Create(filePath);
 			}
 		}
 	}

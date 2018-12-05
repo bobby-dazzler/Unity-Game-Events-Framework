@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	public class GameEvent : ScriptableObject {
 
 		private List<GameEventListener> listeners = new List<GameEventListener>();

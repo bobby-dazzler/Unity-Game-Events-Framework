@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using EventsFramework;
+using UnityEventsFramework;
 
 [CreateAssetMenu (menuName="Actions/Examples/Bar Action")]
 public class BarAction : Action {

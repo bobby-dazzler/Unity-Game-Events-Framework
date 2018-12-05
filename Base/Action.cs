@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EventsFramework {
+namespace UnityEventsFramework {
 	public abstract class Action : ScriptableObject {
 
 		public GameEvent thisEvent;
@@ -23,6 +23,8 @@ namespace EventsFramework {
 		public LogFile logfile;
 
 		public abstract void Act (StateController controller);
+
+		public abstract void CreateHistory(StateController controller);
 
 		public virtual void Archive (StateController controller) {
 			//Database database = controller.GetComponent<Database>();
@@ -48,6 +50,6 @@ namespace EventsFramework {
 			new LogWriter(OnActLogMessage, logfile.filePath);
 		}
 
-		public abstract void CreateHistory(StateController controller);
+		
 	}
 }
