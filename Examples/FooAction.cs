@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName="Actions/Examples/Foo Action")]
+[CreateAssetMenu (menuName="Unity Events Framework/Actions/Examples/Foo Action")]
 public class FooAction : Action {
 
 	public override void Act(StateController controller) {

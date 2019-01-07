@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName="Actions/Examples/Bar Action")]
+[CreateAssetMenu (menuName="Unity Events Framework/Actions/Examples/Bar Action")]
 public class BarAction : Action {
 
 	public override void Act(StateController controller) {

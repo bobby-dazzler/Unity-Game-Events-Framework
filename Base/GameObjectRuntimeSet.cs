@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName = "Runtime Sets/Game Object Set")]
+[CreateAssetMenu (menuName = "Unity Events Framework/Runtime Sets/Game Object Set")]
 public class GameObjectRuntimeSet : RuntimeSet<GameObject> {
 
 

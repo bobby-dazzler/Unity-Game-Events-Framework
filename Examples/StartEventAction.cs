@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName="Actions/Misc/Start Event Action")]
+[CreateAssetMenu (menuName="Unity Events Framework/Actions/Misc/Start Event Action")]
 public class StartEventAction : Action {
 
 	[HideInInspector]

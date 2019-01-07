@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using Newtonsoft.Json;
+using Newtonsoft.Json;  // Requires the Unity Asset 'JSON.NET for Unity'
 
 namespace UnityEventsFramework {
 	public class Database : MonoBehaviour {

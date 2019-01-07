@@ -33,7 +33,7 @@ namespace UnityEventsFramework {
 		void OnStartManageSettingsFile() {
 			string fileName = "settings.json";
 			string folderName = "Config";
-			string configFolder = Path.Combine(Application.streamingAssetsPath, folderName);
+			//string configFolder = Path.Combine(Application.streamingAssetsPath, folderName);
 			string filePath = Path.Combine(folderName, fileName);
 
 			if (!File.Exists(filePath)) {

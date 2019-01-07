@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu(menuName = "Variables/Float")]
+[CreateAssetMenu(menuName = "Unity Events Framework/Variables/Float")]
 public class FloatVariable : ScriptableObject {
 
 	public float value;

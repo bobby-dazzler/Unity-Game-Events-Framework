@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName = "Decisions/Examples/Foo Decision")]
+[CreateAssetMenu (menuName = "Unity Events Framework/Decisions/Examples/Foo Decision")]
 public class FooDecision : StateDecision {
 
 	public override bool Decide(StateController controller) {

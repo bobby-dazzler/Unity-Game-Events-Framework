@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName = "Events/Misc/Generic Event")]
+[CreateAssetMenu (menuName = "Unity Events Framework/Events/Misc/Generic Event")]
 public class GenericEvent : GameEvent {
 
 	public override void StartEvent(StateController controller) {

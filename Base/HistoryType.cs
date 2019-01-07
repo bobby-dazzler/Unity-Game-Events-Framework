@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UnityEventsFramework {
     [System.Serializable]
-    [CreateAssetMenu (menuName = "Enums/History Type")]
+    [CreateAssetMenu (menuName = "Unity Events Framework/Enums/History Type")]
     public class HistoryType : ScriptableObject {
 
         public int index;

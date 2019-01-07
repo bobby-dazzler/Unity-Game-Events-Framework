@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu(menuName = "Decisions/Generic/True")]
+[CreateAssetMenu(menuName = "Unity Events Framework/Decisions/Generic/True")]
 public class TrueDecsion : StateDecision {
 
 	public override bool Decide (StateController controller) {

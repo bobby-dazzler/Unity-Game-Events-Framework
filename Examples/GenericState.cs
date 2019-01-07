@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName = "States/Misc/Generic State")]
+[CreateAssetMenu (menuName = "Unity Events Framework/States/Misc/Generic State")]
 public class GenericState : State {
 
     [HideInInspector]

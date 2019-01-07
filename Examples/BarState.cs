@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName = "States/Examples/Bar State")]
+[CreateAssetMenu (menuName = "Unity Events Framework/States/Examples/Bar State")]
 public class BarState : State {
 
 }

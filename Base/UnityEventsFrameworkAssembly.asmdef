@@ -1,8 +1,6 @@
 {
-    "name": "ExamplesDefinition",
-    "references": [
-        "EventsFrameworkAssembly"
-    ],
+    "name": "UnityEventsFrameworkAssembly",
+    "references": [],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],

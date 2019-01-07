@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu (menuName = "Events/Examples/Bar Event")]
+[CreateAssetMenu (menuName = "Unity Events Framework/Events/Examples/Bar Event")]
 public class BarEvent : GameEvent {
 
 	public override void StartEvent(StateController controller) {

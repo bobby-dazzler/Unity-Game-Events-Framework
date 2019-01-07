@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEventsFramework;
 
-[CreateAssetMenu(menuName="Runtime Sets/Transforms")]
+[CreateAssetMenu(menuName="Unity Events Framework/Runtime Sets/Transforms")]
 public class TransformRuntimeSet : RuntimeSet<Transform> {
 
 
