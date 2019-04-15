@@ -4,17 +4,18 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace UnityEventsFramework {
+	[ExecuteInEditMode]
 	public class GameEventListener : MonoBehaviour {
 
 		public GameEvent Event;
 
 		public UnityEvent response;
 
-		private void OnEnable () {
+		void OnEnable () {
 			Event.RegisterListener(this);
 		}
 
-		private void OnDisable () {
+		void OnDisable () {
 			Event.UnregisterListener(this);
 		}
 

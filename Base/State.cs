@@ -85,9 +85,9 @@ namespace UnityEventsFramework {
 		}
 
 		public void CallActionAtIndex(int index, StateController controller) {
-			//Debug.Log("Calling action: " + index);
 			if (actions[index] == null) {
 				Debug.Log("Attempting to call an action which is not assigned in actions array");
+				//Debug.Log(index + " " + this);
 			} else {
 				if (logActions[index]) {
 					actions[index].LogAction(controller);

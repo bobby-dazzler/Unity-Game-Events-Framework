@@ -26,6 +26,7 @@ namespace UnityEventsFramework {
 		}
 
 		public void RegisterListener(GameEventListener listener) {
+			// Called by GameEventListener.OnEnable()
 			listeners.Add(listener);
 		}
 

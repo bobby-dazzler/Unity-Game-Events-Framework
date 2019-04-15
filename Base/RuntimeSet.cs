@@ -20,6 +20,10 @@ namespace UnityEventsFramework {
 			//}
 		}
 
+		public void Insert(int index, T item) {
+			items.Insert(index, item);
+		}
+
 		public void Remove(T item) {
 			if (items.Contains(item)) {
 				items.Remove(item);

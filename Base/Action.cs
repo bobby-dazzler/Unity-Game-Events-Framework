@@ -11,6 +11,8 @@ namespace UnityEventsFramework {
 
 		public string description = "Description...";
 
+		public bool debugMode = false;
+
 		[HideInInspector]
 		public virtual string OnActLogMessage {
 			get {

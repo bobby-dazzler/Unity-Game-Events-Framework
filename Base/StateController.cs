@@ -11,9 +11,13 @@ namespace UnityEventsFramework {
 		
 		public State remainState; // This is a Dummy generic state, if this is matched then we will not transition to a new state
 
+		public bool debugMode;
+
 		void Awake () {
 			database = GetComponent<Database>();
-			currentState.ConfigureState(this);
+			if (currentState != null) {
+				currentState.ConfigureState(this);
+			}
 		}
 
 		public void UpdateState() {
