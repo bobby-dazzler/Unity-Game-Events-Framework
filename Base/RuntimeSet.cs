@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 using Newtonsoft.Json; // Requires the Unity Asset 'JSON.NET for Unity' from asset store
 
 namespace UnityEventsFramework {
@@ -9,6 +10,9 @@ namespace UnityEventsFramework {
 
 		// Create a class which inherits from this, give it a type and then create a Scriptable Object instance of it
 		// You can then assign it to any class which needs to access the data stored in it
+
+		public string saveFileName = "";
+		public string saveFolderName = "";
 
 		public List<T> items = new List<T>();
 
@@ -44,5 +48,34 @@ namespace UnityEventsFramework {
 			string dataAsJson = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
 			return dataAsJson;
 		}
+
+/* 		public void Save () {
+			if (string.IsNullOrEmpty(saveFileName) ||  string.IsNullOrEmpty(saveFolderName)) {
+				Debug.Log("Must enter file and folder name on the runtime set before saving");
+				return;
+			}
+
+			string folder = Path.Combine(Application.streamingAssetsPath, saveFolderName);
+			string filePath = Path.Combine(folder, saveFileName);
+
+			string dataAsJson = this.SaveToString();
+			File.WriteAllText(filePath, dataAsJson);  
+		} */
+
+/* 		public void Load (string fileName) {
+			if (string.IsNullOrEmpty(fileName) ||  string.IsNullOrEmpty(saveFolderName)) {
+				Debug.Log("Must enter file and folder name on the runtime set before saving");
+				return;
+			}
+			string folder = Path.Combine(Application.streamingAssetsPath, saveFolderName);
+			string filePath = Path.Combine(folder, fileName);
+			
+			if (File.Exists(filePath)) {
+				string dataAsJson = File.ReadAllText(filePath);
+				this = JsonConvert.DeserializeObject<RuntimeSet>(dataAsJson, settings);
+			} else {
+				Debug.Log("Unable to load action history file at: " + filePath);
+			}
+		} */
 	}
 }
