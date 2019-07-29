@@ -36,6 +36,8 @@ namespace UnityEventsFramework {
 
 		public LogFile logFile;
 
+		//public Playbook[] playbooks;
+
 		[HideInInspector]
 		public virtual string OnTransitionLogMessage {
 			get {
