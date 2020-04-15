@@ -6,7 +6,7 @@ using UnityEventsFramework;
 
 public class ArchivingExample : MonoBehaviour {
 
-	public Database exampleDatabase;
+/* 	public Database exampleDatabase;
 
 	void Start () {
 		GenerateSomeActivity();
@@ -50,5 +50,5 @@ public class ArchivingExample : MonoBehaviour {
 			Debug.Log(exampleDatabase.gameEventHistorySet.items[0].eventHistoryItems[i]);
 		} 
 	}
-
+ */
 }

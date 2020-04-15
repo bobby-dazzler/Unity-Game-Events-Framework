@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using Newtonsoft.Json; // Requires the Unity Asset 'JSON.NET for Unity' from asset store
+//using Newtonsoft.Json; // Requires the Unity Asset 'JSON.NET for Unity' from asset store
 
 namespace UnityEventsFramework {
 	[System.Serializable]
@@ -14,9 +14,10 @@ namespace UnityEventsFramework {
 		public string saveFileName = "";
 		public string saveFolderName = "";
 
+		[SerializeField]
 		public List<T> items = new List<T>();
 
-		JsonSerializerSettings settings = new JsonSerializerSettings{TypeNameHandling = TypeNameHandling.All};
+		//JsonSerializerSettings settings = new JsonSerializerSettings{TypeNameHandling = TypeNameHandling.All};
 
 		public void Add(T item) {
 			//if (!items.Contains(item)) {
@@ -44,10 +45,11 @@ namespace UnityEventsFramework {
 			return items.Count;
 		}
 
-		public string SaveToString () {
+/* Removed due to JSON conflict in new unity version
+ 		public string SaveToString () {
 			string dataAsJson = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
 			return dataAsJson;
-		}
+		} */
 
 /* 		public void Save () {
 			if (string.IsNullOrEmpty(saveFileName) ||  string.IsNullOrEmpty(saveFolderName)) {
