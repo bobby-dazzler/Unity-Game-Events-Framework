@@ -5,27 +5,27 @@ using UnityEngine.SceneManagement;
 
 namespace UnityEventsFramework {
 	[System.Serializable]
-	public abstract class RuntimeSetFactory<T> : ScriptableObject {
+	public abstract class RuntimeSetFactory : ScriptableObject {
 
         public string saveFileName = "";
 		public string saveFolderName = "";
 
 		[SerializeField]
-		public List<T> items = new List<T>();
+		public List<FactoryContent> items = new List<FactoryContent>();
 
 		//JsonSerializerSettings settings = new JsonSerializerSettings{TypeNameHandling = TypeNameHandling.All};
 
-		public void Add(T item) {
+		public void Add(FactoryContent item) {
 			//if (!items.Contains(item)) {
 				items.Add(item);
 			//}
 		}
 
-		public void Insert(int index, T item) {
+		public void Insert(int index, FactoryContent item) {
 			items.Insert(index, item);
 		}
 
-		public void Remove(T item) {
+		public void Remove(FactoryContent item) {
 			if (items.Contains(item)) {
 				items.Remove(item);
 			}
@@ -41,6 +41,7 @@ namespace UnityEventsFramework {
 			return items.Count;
 		}
 
+        public Transform gameObjectParent;
 
         List<GameObject>[] pools;
 
@@ -48,7 +49,12 @@ namespace UnityEventsFramework {
 
         Transform recycleBin;
 
-        public GameObject GetInstance(GameObject prefab, int index) {
+        public GameObject GetOrCreateInstance(int index) {
+            if (gameObjectParent == null) {
+                gameObjectParent = new GameObject().transform;
+                gameObjectParent.transform.name = name;
+                gameObjectParent.SetParent(GameObject.Find("Factory Content").transform);
+            }
             if (pools == null) {
                 CreatePools();
             }
@@ -62,7 +68,7 @@ namespace UnityEventsFramework {
                 obj.SetActive(true);
                 pool.RemoveAt(lastIndex);
             } else {
-                obj = Instantiate(prefab);
+                obj = Instantiate(items[index].prefab);
             }
             
             return obj;
@@ -85,9 +91,11 @@ namespace UnityEventsFramework {
                     scene = SceneManager.CreateScene(name);
                 }
             } */
+            
             if (recycleBin == null) {
                 recycleBin = new GameObject().transform;
-                recycleBin.transform.name = "Tiles Recycle Bin";
+                recycleBin.transform.name = "Recycle Bin";
+                recycleBin.SetParent(gameObjectParent);
             }
             pools = new List<GameObject>[items.Count];
             for (int i = 0; i < items.Count; i++) {
@@ -102,48 +110,17 @@ namespace UnityEventsFramework {
                 }
             }
         }
+
+        public void OnEnable() {
+            CheckIDMatchesIndex();
+        }
+
+        public void CheckIDMatchesIndex() {
+            for (int i = 0; i < items.Count; i++) {
+                if (items[i].factoryIndex != i) {
+                    Debug.Log("item " + items[i] + " at index " + i + " in the factory has an incorrect id. This will cause problems when saving and loading. Check what index it is in the runtime set and set it on the scriptable object");
+                } 
+            }
+        }
     }
-
-    
-/*         protected T GetTileObject(int index, int materialId, Vector3 position, Vector3 rotation) {
-            if (pools == null) {
-                CreatePools();
-            }
-            
-            GameObject obj;
-
-            List<GameObject> pool = pools[index];
-            int lastIndex = pool.Count - 1;
-            if (lastIndex >= 0) {
-                Debug.Log("Creating from pool");
-                obj = pool[lastIndex];
-                obj.SetActive(true);
-                obj.transform.position = position;
-                obj.transform.Rotate(rotation);
-                pool.RemoveAt(lastIndex);
-            } else {
-                obj = Instantiate(items[index].prefab, position, Quaternion.identity) as GameObject;
-                obj.transform.Rotate(rotation);
-            }
-
-            if (obj.GetComponent<MeshRenderer>() != null) {
-                //obj.GetComponent<MeshRenderer>().material = materials[materialId];
-            }
-            return obj;
-        } */
-
-/*         public void ReclaimTileObject(GridTile tile) {
-            if (pools == null) {
-                CreatePools();
-            }
-
-            GameObject obj = tile.gridTileObject.gameObject;
-            for (int i = 0; i < 6; i++) {
-                tile.SetProjector(false, i);
-            }
-            pools[tile.tileType.tileTypeId].Add(obj);
-            obj.SetActive(false);
-            //obj.SetParent(recycleBin);
-            tile.gridTileObject = null;
-        } */
 }
