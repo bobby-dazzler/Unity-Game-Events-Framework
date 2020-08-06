@@ -3,16 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEventsFramework {
-    public class SwapActionMono : MonoBehaviour {
-        
+/* 
+    [System.Serializable]
+    public class SwapFunction {
         public int actionIndex;
 
         public Action[] actions;
+    } */
 
-        public void SwapActionAtIndex(int index) {
+    public class SwapActionMono : MonoBehaviour {
+
+        
+        public List<SwapActionSO> swapActions;
+        
+
+        public void SwapActionAtIndex(int swapActionIndex) {
             StateController controller = GetComponent<StateController>();
             State state = controller.currentState;
-            state.actions[actionIndex] = actions[index];
+
+            int actionIndex = swapActions[swapActionIndex].actionToSwap;
+            Action act = swapActions[swapActionIndex].actionToSwapTo;
+
+            state.actions[actionIndex] = act;
         }
     }
 }

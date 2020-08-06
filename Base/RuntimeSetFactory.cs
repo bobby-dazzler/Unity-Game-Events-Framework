@@ -63,7 +63,7 @@ namespace UnityEventsFramework {
             int lastIndex = pool.Count - 1;
             GameObject obj;
             if (lastIndex >= 0) {
-                Debug.Log("Creating from pool: " +  index);
+                //Debug.Log("Creating from pool: " +  index);
                 obj = pool[lastIndex];
                 obj.SetActive(true);
                 pool.RemoveAt(lastIndex);
