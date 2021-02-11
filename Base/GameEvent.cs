@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEventsFramework {
+	[CreateAssetMenu(menuName="Unity Events Framework/Game Events/Generic Event")]
 	public class GameEvent : ScriptableObject {
 
 		private List<GameEventListener> listeners = new List<GameEventListener>();
 
-		public virtual void StartEvent(StateController controller) {
+		public bool unregisterOnEnd;
+
+		public void StartEvent(StateController controller) {
+			// Change this to a virtual and create overrides if this isn't suitable
+			Raise();
+		}
+		public void StartEvent() {
+			// Change this to a virtual and create overrides if this isn't suitable
+			Raise();
 		}
 
-		public virtual void EndEvent(StateController controller) {
+		public  void EndEvent(StateController controller) {
+			//////////////////////
+			// THIS IS UNTESTED //
+			//////////////////////
 
-		}
-
-		public virtual void CreateEventHistory(StateController controller) {
-			GameEventHistory eventHistory = new GameEventHistory();
-			controller.database.gameEventHistorySet.Add(eventHistory);
+			//UnregisterListener();
 		}
 
 		public void Raise () {
@@ -31,7 +39,15 @@ namespace UnityEventsFramework {
 		}
 
 		public void UnregisterListener(GameEventListener listener) {
-			listeners.Remove(listener);
+			//////////////////////
+			// THIS IS UNTESTED //
+			//////////////////////
+			
+			
+			for (int i = listeners.Count - 1; i >= 0; i--) {
+				listeners.Remove(listener);
+			}
+			listeners.Clear();
 		}
 	}
 }

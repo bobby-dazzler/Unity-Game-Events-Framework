@@ -14,10 +14,18 @@ namespace UnityEventsFramework {
 		public string saveFileName = "";
 		public string saveFolderName = "";
 
+		public bool clearOnEnable;
+
 		[SerializeField]
 		public List<T> items = new List<T>();
 
 		//JsonSerializerSettings settings = new JsonSerializerSettings{TypeNameHandling = TypeNameHandling.All};
+
+		public void OnEnable() {
+			if (clearOnEnable) {
+				items.Clear();
+			}
+		}
 
 		public void Add(T item) {
 			//if (!items.Contains(item)) {
